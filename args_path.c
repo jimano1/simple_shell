@@ -1,18 +1,19 @@
 #include "holberton.h"
 
 /**
- *_strcat - concatenate 2 strings
- *@dest: is a character
- *@src: is a character
- *Return: dest concatenated strind
+ * _strcat - Concatenates two strings.
+ * @dest: The destination string.
+ * @src: The source string.
+ *
+ * Return: Pointer to the destination string.
  */
-
 char *_strcat(char *dest, char *src)
 {
 	int i, j;
 
 	for (i = 0; dest[i] != '\0'; i++)
-	{ }
+	{
+	}
 
 	for (j = 0; src[j] != '\0'; j++, i++)
 		dest[i] = src[j];
@@ -22,12 +23,12 @@ char *_strcat(char *dest, char *src)
 }
 
 /**
- * args_path - concatenates the arguments
- * @parse: is a char
- * @new: is a char
- * Return: total or null
+ * args_path - Concatenates the arguments.
+ * @parse: Array of strings to concatenate.
+ * @new: Array of strings to append.
+ *
+ * Return: Pointer to the concatenated string or NULL.
  */
-
 char *args_path(char **parse, char **new)
 {
 	char *total, **cat;
@@ -43,8 +44,9 @@ char *args_path(char **parse, char **new)
 
 		if (stat(total, &status) == 0)
 		{
-			for (k = 0; parse[k] != '\0'; k++)
-				;
+			for (k = 0; parse[k] != NULL; k++)
+			{
+			}
 			cat = malloc(sizeof(char *) * (k + 1));
 			cat[k] = NULL;
 			cat[0] = _strdup(total);
@@ -52,6 +54,7 @@ char *args_path(char **parse, char **new)
 			for (j = 1; parse[j]; j++)
 				cat[j] = _strdup(parse[j]);
 			execute(cat);
+			free(cat); /* Remember to free allocated memory */
 			return (total);
 		}
 		free(total);
