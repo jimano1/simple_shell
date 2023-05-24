@@ -1,114 +1,174 @@
-#include "shell.h"
+#include "simishell.h"
 
 /**
- * _strdup - returns a pointer to a newly allocated space in memory, which
- * contains a copy of the string given as a parameter
- * @str: pointer to a string
- * Return: pointer to a string
- */
-char *_strdup(char *str)
-{
-	int i, l;
-	char *new;
+* getstr - a function to read a string from  the cli
+* @str: a string pointer
+*
+* Return: return 1 in success and -1 in failure
+*/
 
-	if (!str)
-	{
-		return (NULL);
-	}
-	for (l = 0; str[l] != '\0';)
-	{
-		l++;
-	}
-	new = malloc(sizeof(char) * l + 1);
-	if (!new)
-	{
-		return (NULL);
-	}
-	for (i = 0; i < l; i++)
-	{
-		new[i] = str[i];
-	}
-	new[l] = str[l];
-	return (new);
+int getstr(char *str)
+{
+char **line;
+size_t siz = 0;
+signal(SIGINT, sigintHandler);
+line = malloc(24);
+if (!line)
+{
+return (-1);
+}
+
+if ((getline(line, &siz, stdin)) == -1)
+{
+return (-1);
+}
+
+line[0][siz] = '\0';
+
+strcopy(line[0], str);
+
+if (line[0][siz - 2] == '\\')
+{
+do {
+str[strleng(str) - 1] = ' ';
+siz = 0;
+printprompt(1);
+
+if ((getline(line, &siz, stdin)) == -1)
+{
+return (-1);
+}
+line[0][siz] = '\0';
+
+strmix(line[0], str);
+} while (line[0][siz - 2] == '\\');
+}
+
+free(line);
+return (1);
 }
 
 /**
- * concat_all - concats 3 strings in a newly allocated memory
- * @name: first string
- * @sep: second string
- * @value: Third string
- * Return: pointer to the new string
- */
-char *concat_all(char *name, char *sep, char *value)
+* strcopy - a function to copy to strings
+* @src: the string to be copied
+* @dest: the destination of the copied string
+*
+* Return: returns nothing (void)
+*/
+
+void strcopy(char *src, char *dest)
 {
-	char *result;
-	int l1, l2, l3, i, k;
+int i = 0;
+int j = 0;
 
-	l1 = _strlen(name);
-	l2 = _strlen(sep);
-	l3 = _strlen(value);
+if (!dest)
+{
+j = 0;
+}
 
-	result = malloc(l1 + l2 + l3 + 1);
-	if (!result)
-		return (NULL);
+while (src[i] != '\0' && src[i] != '\n')
+{
+dest[j++] = src[i++];
+}
 
-	for (i = 0; name[i]; i++)
-		result[i] = name[i];
-	k = i;
-
-	for (i = 0; sep[i]; i++)
-		result[k + i] = sep[i];
-	k = k + i;
-
-	for (i = 0; value[i]; i++)
-		result[k + i] = value[i];
-	k = k + i;
-
-	result[k] = '\0';
-
-	return (result);
+dest[j] = '\0';
 }
 
 /**
- * _strlen - it gives the length of a string
- * @s: pointer to the string
- * Return: the length of string
- */
-int _strlen(char *s)
-{
-	int i = 0;
+* strmix - a function to copy to strings and concatenate if
+*	   the destination have a string already.
+* @src: the string to be copied
+* @dest: the destination of the copied string
+*
+* Return: returns nothing (void)
+*/
 
-	while (*(s + i) != '\0')
-	{
-		i++;
-	}
-	return (i);
+void strmix(char *src, char *dest)
+{
+int i = 0;
+int j;
+
+if (!dest)
+{
+j = 0;
+}
+else
+{
+j = strleng(dest);
+}
+
+while (src[i] != '\0' && src[i] != '\n')
+{
+dest[j++] = src[i++];
+}
+
+dest[j] = '\0';
 }
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
+* strbrk - a function that breaks a long string in to arrauy of strings
+* @line: the string to be breakdown
+* @c: a chacter specifier where to break the string
+*
+* Return: returns the array of the words.
+*/
+
+char **strbrk(char *line, char c)
 {
-	return (write(1, &c, 1));
+int i = 0, j = 0;
+char **array, **tmp;
+
+if (!line || line[0] == '\0')
+{
+return (NULL);
+}
+array = malloc(sizeof(*array) * 128);
+if (array == NULL)
+{
+perror("Couldn't Allocate");
+return (NULL); }
+while (line[i] != '\0')
+{
+if (j > 124)
+{
+tmp = realloc(array, sizeof(*array) * (i + 4));
+if (tmp == NULL)
+{
+perror("Couldn't Reallocate");
+return (NULL); }
+else
+{
+array = tmp; }
+}
+if (line[i] == c)
+{
+i++;
+continue; }
+array[j] = stringer(line, i, array[j], c);
+if (array[j] == NULL)
+{
+return (NULL); }
+i += strleng(array[j++]);
+}
+array[j] = NULL;
+return (array);
 }
 
 /**
- * _puts - prints a string
- * @str: pointer to string
- */
+* strleng - measures a length of a string
+* @s: a string location pointer
+*
+* Return: returns length
+*/
 
-void _puts(char *str)
+int strleng(char *s)
 {
-	int i = 0;
+int len = 0;
 
-	while (str[i])
-	{
-		_putchar(str[i]);
-		i++;
-	}
+while (s[len] != '\0')
+{
+len++;
+}
+
+return (len);
 }
