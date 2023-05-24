@@ -3,7 +3,7 @@
 /**
  * copyarray - a function to copy string array to another string array variable
  * @line: a string array to be copied
- * 
+ *
  * Return: returns the copied array
  */
 
