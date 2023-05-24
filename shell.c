@@ -13,12 +13,13 @@ void sig_handler(int sig_num)
 }
 
 /**
- * _EOF - handles the End of File
- * @len: return value of getline function
- * @buff: buffer
+* _EOF - handles the End of File
+* @len: return value of getline function
+* @buff: buffer
  */
 void _EOF(int len, char *buff)
 {
+	(void)buff;
 	if (len == -1)
 	{
 		if (isatty(STDIN_FILENO))
@@ -29,21 +30,30 @@ void _EOF(int len, char *buff)
 		exit(0);
 	}
 }
+/**
+  * _isatty - verif if terminal
+  */
 
+void _isatty(void)
+{
+	if (isatty(STDIN_FILENO))
+		_puts("#cisfun$ ");
+}
 /**
  * main - Shell
  * Return: 0 on success
  */
+
 int main(void)
 {
 	ssize_t len = 0;
-	char *buff = NULL, **arv;
+	char *buff = NULL, *value, *pathname, **arv;
 	size_t size = 0;
-	list_path *head = NULL;
+	list_path *head = '\0';
 	void (*f)(char **);
 
 	signal(SIGINT, sig_handler);
-	while (len != -1)
+	while (len != EOF)
 	{
 		_isatty();
 		len = getline(&buff, &size, stdin);
@@ -53,14 +63,14 @@ int main(void)
 			execute(arv);
 		else
 		{
-			char *value = _getenv("PATH");
-				head = linkpath(value);
-			char *pathname = _which(arv[0], head);
-				f = checkbuild(arv);
+			value = _getenv("PATH");
+			head = linkpath(value);
+			pathname = _which(arv[0], head);
+			f = checkbuild(arv);
 			if (f)
 			{
-				f(arv);
 				free(buff);
+				f(arv);
 			}
 			else if (!pathname)
 				execute(arv);
@@ -71,9 +81,9 @@ int main(void)
 				execute(arv);
 			}
 		}
-		freearv(arv);
 	}
 	free_list(head);
+	freearv(arv);
 	free(buff);
 	return (0);
 }
