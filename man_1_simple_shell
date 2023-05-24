@@ -1,4 +1,4 @@
-.TH SHELL 1 "27 November 2019" GNU "Shell man page"
+.TH SHELL 1 "23 mai 2023" GNU "Shell man page"
 .SH NAME
 .B hsh
 - Command line interpreter (shell)
