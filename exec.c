@@ -2,14 +2,19 @@
 
 /**
  * execute - execute the commands
- * @parse: is a char array of pointers
+ * @parse: char array of pointers
+ *
  * Return: Always 0.
  */
-
 int execute(char **parse)
 {
 	pid_t pid;
 	int status;
+
+	if (strcmp(parse[0], "exit") == 0) /* Check if the command is "exit" */
+	{
+		exit(0); /* Terminate the shell program */
+	}
 
 	pid = fork();
 	if (pid == 0)
