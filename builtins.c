@@ -31,7 +31,7 @@ void (*check_for_builtins(vars_t *vars))(vars_t *vars)
  * @vars: Variables used in the program.
  * Return: void
  */
-void new_exit(vars_t *vars)
+void newExit(vars_t *vars)
 {
 	int status;
 
@@ -62,7 +62,7 @@ void new_exit(vars_t *vars)
  * @vars: Variables used for printing.
  * Return: void.
  */
-void _env(vars_t *vars)
+void printEnvironment(vars_t *vars)
 {
 	unsigned int i;
 
@@ -81,7 +81,7 @@ void _env(vars_t *vars)
  *
  * Return: void
  */
-void new_setenv(vars_t *vars)
+void createOrEditEnvVariable(vars_t *vars)
 {
 	char **key;
 	char *var;
@@ -119,7 +119,7 @@ void new_setenv(vars_t *vars)
  *
  * Return: void
  */
-void new_unsetenv(vars_t *vars)
+void removeEnvVariable(vars_t *vars)
 {
 	char **key, **newenv;
 
