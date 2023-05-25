@@ -55,7 +55,7 @@ char *new_strtok(char *str, const char *delim)
 			break;
 	}
 	if (next_token[i] == '\0')
-		next_token = NULL;
+	next_token = NULL;
 	else
 	{
 		next_token[i] = '\0';

@@ -1,9 +1,11 @@
 #include "shell.h"
 
+/* global variable for ^C handling */
+unsigned int sig_flag;
+
 /**
- * sig_handler - control the ^C signal interrupt
- * OWNED BY: YAHYA & JAMAL
- * @uuv: Unused variable (required for the signal function prototype)
+ * sig_handler - handles ^C signal interupt
+ * @uuv: unused variable (required for signal function prototype)
  *
  * Return: void
  */
@@ -17,11 +19,10 @@ static void sig_handler(int uuv)
 }
 
 /**
- * main - Main function for the shell
- * OWNED BY: YAHYA & JAMAL
- * @argc: Number of the arguments that passes to main
- * @argv: Array of arguments passes to the main
- * @environment: Array of environment variables
+ * main - main function for the shell
+ * @argc: number of arguments passed to main
+ * @argv: array of arguments passed to main
+ * @environment: array of environment variables
  *
  * Return: 0 or exit status, or ?
  */

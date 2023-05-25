@@ -1,11 +1,10 @@
 #include "shell.h"
 
 /**
- * _puts - Writes a string a standard output
- * OWNED BY: YAHYA & JAMAL
- * @str: The string to be written
+ * _puts - writes a string to standard output
+ * @str: string to write
  *
- * Return: The number of characters printed, or -1 on failure
+ * Return: number of chars printed or -1 on failure
  */
 ssize_t _puts(char *str)
 {
@@ -22,12 +21,9 @@ ssize_t _puts(char *str)
 }
 
 /**
- * _strdup - Restore  a pointer to a recently allocated,
- * space in the memory contain a copy of a string
- * @strtodup: a string to be duplicated
- *
- * Return: A pointer to the newly duplicated string,
- * or NULL if memory allocation fails
+ * _strdup - returns pointer to new mem alloc space which contains copy
+ * @strtodup: string to be duplicated
+ * Return: a pointer to the new duplicated string
  */
 char *_strdup(char *strtodup)
 {
@@ -49,13 +45,10 @@ char *_strdup(char *strtodup)
 }
 
 /**
- * _strcmp - Compares two strings
- * @strcmp1: The first string to be compared
- * @strcmp2: The second string to be compared
- *
- * Return: 0 if the strings are equal,
- * a value less than 0 if strcmp1 is less than strcmp2,
- *         a value greater than 0 if strcmp1 is greater than strcmp2
+ * _strcmpr - compares two strings
+ * @strcmp1: first string, of two, to be compared in length
+ * @strcmp2: second string, of two, to be compared
+ * Return: 0 on success, anything else is a failure
  */
 int _strcmpr(char *strcmp1, char *strcmp2)
 {
@@ -72,11 +65,10 @@ int _strcmpr(char *strcmp1, char *strcmp2)
 }
 
 /**
- * _strcat - Concatenates two strings
- * @strc1: The first string
- * @strc2: The second string
- *
- * Return: A pointer to the concatenated string
+ * _strcat - concatenates two strings
+ * @strc1: first string
+ * @strc2: second string
+ * Return: pointer
  */
 char *_strcat(char *strc1, char *strc2)
 {
@@ -111,11 +103,11 @@ char *_strcat(char *strc1, char *strc2)
 	newstring[len1 + len2 + 1] = '\0';
 	return (newstring);
 }
+
 /**
- * _strlen - Returns the length of a string
- * @str: The string to be measured
- *
- * Return: The length of the string
+ * _strlen - returns the length of a string
+ * @str: string to be measured
+ * Return: length of string
  */
 unsigned int _strlen(char *str)
 {
@@ -127,3 +119,4 @@ unsigned int _strlen(char *str)
 		;
 	return (len);
 }
+
