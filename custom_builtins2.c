@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * add_key - Creates a new environment variable.
+ * add_key - create a new environment variable
  * @vars: pointer to struct of variables
- * Owned by Yahya & Jamal
+ *
  * Return: void
  */
 void add_key(vars_t *vars)
@@ -39,11 +39,11 @@ void add_key(vars_t *vars)
 }
 
 /**
- * find_key - detecte an environment variable.
- * @env: array of env variables
- * @key: env variable to find
+ * find_key - finds an environment variable
+ * @env: array of environment variables
+ * @key: environment variable to find
  *
- * Return: pointer to address of the env variable
+ * Return: pointer to address of the environment variable
  */
 char **find_key(char **env, char *key)
 {
@@ -62,9 +62,9 @@ char **find_key(char **env, char *key)
 }
 
 /**
- * add_value - Creates a new environment variable string.
- * @key: variable of name
- * @value: variable of value
+ * add_value - create a new environment variable string
+ * @key: variable name
+ * @value: variable value
  *
  * Return: pointer to the new string;
  */
@@ -88,9 +88,9 @@ char *add_value(char *key, char *value)
 }
 
 /**
- * _atoi - converts strings into an integers
+ * _atoi - converts a string into an integer
  * @str: string to convert
- * OWNED BY YAHYA & JAMAL
+ *
  * Return: the integer value, or -1 if an error occurs
  */
 int _atoi(char *str)

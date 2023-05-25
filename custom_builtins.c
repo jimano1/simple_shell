@@ -1,12 +1,11 @@
 #include "shell.h"
 
 /**
- * check_builtins - checks commands
- * OWNED BY YAHYA & JAMAL
- * @vars: All variables
+ * check_for_builtins - checks if the command is a builtin
+ * @vars: variables
  * Return: pointer to the function or NULL
  */
-void (*check_builtins(vars_t *vars))(vars_t *vars)
+void (*check_for_builtins(vars_t *vars))(vars_t *vars)
 {
 	unsigned int i;
 	builtins_t check[] = {
@@ -28,9 +27,8 @@ void (*check_builtins(vars_t *vars))(vars_t *vars)
 }
 
 /**
- * new_exit - exit the program
- * OWNED BY YAHYA % JAMAL
- * @vars: All variables
+ * new_exit - exit program
+ * @vars: variables
  * Return: void
  */
 void new_exit(vars_t *vars)
@@ -60,12 +58,11 @@ void new_exit(vars_t *vars)
 }
 
 /**
- * _environment - Prints the current env
- * OWNED BY YAHYA & JAMAL
- * @vars: structure of the variables
+ * _env - prints the current environment
+ * @vars: struct of variables
  * Return: void.
  */
-void _environment(vars_t *vars)
+void _env(vars_t *vars)
 {
 	unsigned int i;
 
@@ -78,9 +75,8 @@ void _environment(vars_t *vars)
 }
 
 /**
- * new_setenv - create a new environment variable, or edit an existing one
- * OWNED BY YAHYA & JAMAL
- * @vars: pointer to structure of variables
+ * new_setenv - create a new environment variable, or edit an existing variable
+ * @vars: pointer to struct of variables
  *
  * Return: void
  */
@@ -117,9 +113,8 @@ void new_setenv(vars_t *vars)
 }
 
 /**
- * new_unsetenv - Remove the environment of variable
- * @vars: pointer to a structure of variables
- * OWNED BU YAHYA & JAMAL
+ * new_unsetenv - remove an environment variable
+ * @vars: pointer to a struct of variables
  *
  * Return: void
  */
