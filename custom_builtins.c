@@ -1,11 +1,12 @@
 #include "shell.h"
 
 /**
- * checkForBuiltins - Determines if the given command is a builtin function.
- * @vars: Variables used for checking.
- * Return: Pointer to the function if it is a builtin, otherwise NULL.
+ * check_builtins - checks commands
+ * OWNED BY YAHYA & JAMAL
+ * @vars: All variables
+ * Return: pointer to the function or NULL
  */
-void (*check_for_builtins(vars_t *vars))(vars_t *vars)
+void (*check_builtins(vars_t *vars))(vars_t *vars)
 {
 	unsigned int i;
 	builtins_t check[] = {
@@ -27,11 +28,12 @@ void (*check_for_builtins(vars_t *vars))(vars_t *vars)
 }
 
 /**
- * newExit - Terminates the program.
- * @vars: Variables used in the program.
+ * new_exit - exit the program
+ * OWNED BY YAHYA % JAMAL
+ * @vars: All variables
  * Return: void
  */
-void newExit(vars_t *vars)
+void new_exit(vars_t *vars)
 {
 	int status;
 
@@ -58,11 +60,12 @@ void newExit(vars_t *vars)
 }
 
 /**
- * printEnvironment - Prints the current environment.
- * @vars: Variables used for printing.
+ * _environment - Prints the current env
+ * OWNED BY YAHYA & JAMAL
+ * @vars: structure of the variables
  * Return: void.
  */
-void printEnvironment(vars_t *vars)
+void _environment(vars_t *vars)
 {
 	unsigned int i;
 
@@ -75,13 +78,13 @@ void printEnvironment(vars_t *vars)
 }
 
 /**
- * createOrEditEnvVariable - Creates a new environment variable,
- * or edits an existing variable.
- * @vars: Pointer to a struct of variables.
+ * new_setenv - create a new environment variable, or edit an existing one
+ * OWNED BY YAHYA & JAMAL
+ * @vars: pointer to structure of variables
  *
  * Return: void
  */
-void createOrEditEnvVariable(vars_t *vars)
+void new_setenv(vars_t *vars)
 {
 	char **key;
 	char *var;
@@ -114,12 +117,13 @@ void createOrEditEnvVariable(vars_t *vars)
 }
 
 /**
- * removeEnvVariable - Removes an environment variable.
- * @vars: Pointer to a struct of variables.
+ * new_unsetenv - Remove the environment of variable
+ * @vars: pointer to a structure of variables
+ * OWNED BU YAHYA & JAMAL
  *
  * Return: void
  */
-void removeEnvVariable(vars_t *vars)
+void new_unsetenv(vars_t *vars)
 {
 	char **key, **newenv;
 
