@@ -1,14 +1,16 @@
 #include "shell.h"
 /**
- * path_execute - executes a command in the path
- * @command: full path to the command
- * @vars: pointer to struct of variables
+ * path_execute - Executes a command located in the system's path.
+ * OWNED BY YAHYA & JAMAL
+ * @command: Executes a command with the specified full path
+ * @vars: pointer to struct of the variables
  *
  * Return: 0 on succcess, 1 on failure
  */
 int path_execute(char *command, vars_t *vars)
 {
 	pid_t child_pid;
+
 	if (access(command, X_OK) == 0)
 	{
 		child_pid = fork();
@@ -39,8 +41,9 @@ int path_execute(char *command, vars_t *vars)
 	return (0);
 }
 /**
- * find_path - finds the PATH variable
- * @env: array of environment variables
+ * find_path - notice PATH variables
+ * OWNED BY YAHYA & JAMAL
+ * @env: An array containing environment variables.
  *
  * Return: pointer to the node that contains the PATH, or NULL on failure
  */
@@ -48,6 +51,7 @@ char *find_path(char **env)
 {
 	char *path = "PATH=";
 	unsigned int i, j;
+
 	for (i = 0; env[i] != NULL; i++)
 	{
 		for (j = 0; j < 5; j++)
@@ -59,8 +63,10 @@ char *find_path(char **env)
 	return (env[i]);
 }
 /**
- * check_for_path - checks if the command is in the PATH
- * @vars: variables
+ * check_for_path - examine if the command is present
+ * in the system's PATH
+ * OWNED BY YAHYA & JAMAL
+ * @vars: The variables
  *
  * Return: void
  */
@@ -108,8 +114,9 @@ void check_for_path(vars_t *vars)
 		new_exit(vars);
 }
 /**
- * execute_cwd - executes the command in the current working directory
- * @vars: pointer to struct of variables
+ * execute_cwd - Run the command in the current working directory
+ * OWNED BY YAHYA & JAMAL
+ * @vars: Pointer to a structure containing variables
  *
  * Return: 0 on success, 1 on failure
  */
@@ -154,14 +161,16 @@ int execute_cwd(vars_t *vars)
 	return (0);
 }
 /**
- * check_for_dir - checks if the command is a part of a path
- * @str: command
+ * check_for_dir - examine if the command is a part of a specified path.
+ * OWNED BY YAHYA & JAMAL
+ * @str: The command
  *
  * Return: 1 on success, 0 on failure
  */
 int check_for_dir(char *str)
 {
 	unsigned int i;
+
 	for (i = 0; str[i]; i++)
 	{
 		if (str[i] == '/')

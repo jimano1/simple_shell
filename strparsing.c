@@ -1,9 +1,10 @@
 #include "shell.h"
 
 /**
- * check_match - checks if a character matches any in a string
- * @c: character to check
- * @str: string to check
+ * check_match - examine if a character compliment in a string
+ * OWNED BY YAHYA & JAMAL
+ * @c: character to examine
+ * @str: string to examine
  *
  * Return: 1 if match, 0 if not
  */
@@ -20,9 +21,10 @@ unsigned int check_match(char c, const char *str)
 }
 
 /**
- * new_strtok - custom strtok
- * @str: string to tokenize
- * @delim: delimiter to tokenize against
+ * new_strtok - usage of strtok
+ * OWNED BY YAHYA & JAMAL
+ * @str: string to the tokenization
+ * @delim: The delimiter to tokenize in case off
  *
  * Return: pointer to the next token or NULL
  */

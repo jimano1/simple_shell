@@ -1,8 +1,5 @@
 #include "shell.h"
 
-/* Global variable for handling ^C signal interrupt */
-unsigned int sig_flag;
-
 /**
  * sig_handler - control the ^C signal interrupt
  * OWNED BY: YAHYA & JAMAL

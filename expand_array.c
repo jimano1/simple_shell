@@ -1,9 +1,10 @@
 #include "shell.h"
 
 /**
- * _realloc - reallocates a pointer to double the space
- * @ptr: pointer to the old array
- * @size: pointer to number of elements in the old array
+ * _realloc - reselect a pointer to duplicate the space
+ * OWNED BY YAHYA & JAMAL
+ * @ptr: pointer to the earliest arrangement
+ * @size: pointer to number of elements in the earliest arrangement
  *
  * Return: pointer to the new array
  */

@@ -1,9 +1,10 @@
 #include "shell.h"
 
 /**
- * print_error - prints error messages to standard error
- * @vars: pointer to struct of variables
- * @msg: message to print
+ * print_error - list errors messages to usual error
+ * OWNED BY YAHYA & JAMAL
+ * @vars: pointer to struct of the variables
+ * @msg: message to list
  *
  * Return: void
  */
@@ -27,8 +28,9 @@ void print_error(vars_t *vars, char *msg)
 }
 
 /**
- * _puts2 - prints a string to standard error
- * @str: string to print
+ * _puts2 - list a string to usual error
+ * OWNED BY YAHYA & JAMAL
+ * @str: string to list
  *
  * Return: void
  */
@@ -47,8 +49,9 @@ void _puts2(char *str)
 }
 
 /**
- * _uitoa - converts an unsigned int to a string
- * @count: unsigned int to convert
+ * _uitoa - adapt an unsigned int to a string
+ * OWNED BY YAHYA & JAMAL
+ * @count: unsigned int to adapt
  *
  * Return: pointer to the converted string
  */
