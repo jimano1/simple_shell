@@ -1,15 +1,21 @@
 #include "shell.h"
 
+/* global variable for ^C handling */
+unsigned int sig_flag;
+
 /**
- * sig_handler - handles ^C signal interrupt
+ * sig_handler - handles ^C signal interupt
  * @uuv: unused variable (required for signal function prototype)
  *
  * Return: void
  */
 static void sig_handler(int uuv)
 {
-	(void)uuv;
-	_puts("\n$ ");
+	(void) uuv;
+	if (sig_flag == 0)
+		_puts("\n$ ");
+	else
+		_puts("\n");
 }
 
 /**
@@ -25,7 +31,6 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 	size_t len_buffer = 0;
 	unsigned int is_pipe = 0, i;
 	vars_t vars = {NULL, NULL, NULL, 0, NULL, 0, NULL};
-	unsigned int sig_flag = 0;
 
 	vars.argv = argv;
 	vars.env = make_env(environment);
@@ -34,6 +39,7 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 		is_pipe = 1;
 	if (is_pipe == 0)
 		_puts("$ ");
+	sig_flag = 0;
 	while (getline(&(vars.buffer), &len_buffer, stdin) != -1)
 	{
 		sig_flag = 1;
@@ -57,6 +63,6 @@ int main(int argc __attribute__((unused)), char **argv, char **environment)
 	if (is_pipe == 0)
 		_puts("\n");
 	free_env(vars.env);
-
-	return (0);
+	free(vars.buffer);
+	exit(vars.status);
 }
