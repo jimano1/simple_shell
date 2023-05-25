@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * addEnvVariable - Creates a new environment variable.
+ * add_key - Creates a new environment variable.
  * @vars: pointer to struct of variables
  * Owned by Yahya & Jamal
  * Return: void
  */
-void addEnvVariable(vars_t *vars)
+void add_key(vars_t *vars)
 {
 	unsigned int i;
 	char **newenv;
@@ -39,13 +39,13 @@ void addEnvVariable(vars_t *vars)
 }
 
 /**
- * findEnvVariable - Locates an environment variable.
+ * find_key - detecte an environment variable.
  * @env: array of env variables
  * @key: env variable to find
  *
  * Return: pointer to address of the env variable
  */
-char **findEnvVariable(char **env, char *key)
+char **find_key(char **env, char *key)
 {
 	unsigned int i, j, len;
 
@@ -62,13 +62,13 @@ char **findEnvVariable(char **env, char *key)
 }
 
 /**
- * createEnvVariableString - Creates a new environment variable string.
+ * add_value - Creates a new environment variable string.
  * @key: variable of name
  * @value: variable of value
  *
  * Return: pointer to the new string;
  */
-char *createEnvVariableString(char *key, char *value)
+char *add_value(char *key, char *value)
 {
 	unsigned int len1, len2, i, j;
 	char *new;
