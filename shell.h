@@ -1,24 +1,26 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdio.h>
+#include <sys/wait.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <sys/wait.h>
-#include <limits.h>
 #include <signal.h>
+#include <limits.h>
+
 
 
 /**
  * struct variables - variables
- * @av: command line arguments
- * @buffer: buffer of command
- * @env: environment variables
- * @count: count of commands entered
- * @argv: arguments at opening of shell
+ * OWNED BY: YAHYA & JAMAL
+ * @av: The command line arguments
+ * @buffer: The buffer of command
+ * @env: env variables
+ * @count: number of commands entered
+ * @argv: The arguments at opening of shell
  * @status: exit status
  */
 typedef struct variables
@@ -33,7 +35,7 @@ typedef struct variables
 } vars_t;
 
 /**
- * struct builtins - struct for the builtin functions
+ * struct builtins - the struct for the builtin functions
  * @name: name of builtin command
  * @f: function for corresponding builtin
  */
