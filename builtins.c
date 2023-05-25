@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * check_for_builtins - checks if the command is a builtin
- * @vars: variables
- * Return: pointer to the function or NULL
+ * checkForBuiltins - Determines if the given command is a builtin function.
+ * @vars: Variables used for checking.
+ * Return: Pointer to the function if it is a builtin, otherwise NULL.
  */
 void (*check_for_builtins(vars_t *vars))(vars_t *vars)
 {
@@ -27,8 +27,8 @@ void (*check_for_builtins(vars_t *vars))(vars_t *vars)
 }
 
 /**
- * new_exit - exit program
- * @vars: variables
+ * newExit - Terminates the program.
+ * @vars: Variables used in the program.
  * Return: void
  */
 void new_exit(vars_t *vars)
@@ -58,8 +58,8 @@ void new_exit(vars_t *vars)
 }
 
 /**
- * _env - prints the current environment
- * @vars: struct of variables
+ * printEnvironment - Prints the current environment.
+ * @vars: Variables used for printing.
  * Return: void.
  */
 void _env(vars_t *vars)
@@ -75,8 +75,9 @@ void _env(vars_t *vars)
 }
 
 /**
- * new_setenv - create a new environment variable, or edit an existing variable
- * @vars: pointer to struct of variables
+ * createOrEditEnvVariable - Creates a new environment variable,
+ * or edits an existing variable.
+ * @vars: Pointer to a struct of variables.
  *
  * Return: void
  */
@@ -113,8 +114,8 @@ void new_setenv(vars_t *vars)
 }
 
 /**
- * new_unsetenv - remove an environment variable
- * @vars: pointer to a struct of variables
+ * removeEnvVariable - Removes an environment variable.
+ * @vars: Pointer to a struct of variables.
  *
  * Return: void
  */
