@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- * _puts - Writes a string to the standard output
+ * _puts - Writes a string a standard output
+ * OWNED BY: YAHYA & JAMAL
  * @str: The string to be written
  *
  * Return: The number of characters printed, or -1 on failure
@@ -21,10 +22,12 @@ ssize_t _puts(char *str)
 }
 
 /**
- * _strdup - Returns a pointer to a newly allocated space in memory containing a copy of a string
- * @strtodup: The string to be duplicated
+ * _strdup - Restore  a pointer to a recently allocated,
+ * space in the memory contain a copy of a string
+ * @strtodup: a string to be duplicated
  *
- * Return: A pointer to the newly duplicated string, or NULL if memory allocation fails
+ * Return: A pointer to the newly duplicated string,
+ * or NULL if memory allocation fails
  */
 char *_strdup(char *strtodup)
 {
@@ -47,10 +50,11 @@ char *_strdup(char *strtodup)
 
 /**
  * _strcmp - Compares two strings
- * @strcmp1: First string to be compared
- * @strcmp2: Second string to be compared
+ * @strcmp1: The first string to be compared
+ * @strcmp2: The second string to be compared
  *
- * Return: 0 if the strings are equal, a value less than 0 if strcmp1 is less than strcmp2,
+ * Return: 0 if the strings are equal,
+ * a value less than 0 if strcmp1 is less than strcmp2,
  *         a value greater than 0 if strcmp1 is greater than strcmp2
  */
 int _strcmpr(char *strcmp1, char *strcmp2)

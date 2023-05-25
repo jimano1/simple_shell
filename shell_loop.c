@@ -4,7 +4,8 @@
 unsigned int sig_flag;
 
 /**
- * sig_handler - Handles the ^C signal interrupt
+ * sig_handler - control the ^C signal interrupt
+ * OWNED BY: YAHYA & JAMAL
  * @uuv: Unused variable (required for the signal function prototype)
  *
  * Return: void
@@ -20,8 +21,9 @@ static void sig_handler(int uuv)
 
 /**
  * main - Main function for the shell
- * @argc: Number of arguments passed to main
- * @argv: Array of arguments passed to main
+ * OWNED BY: YAHYA & JAMAL
+ * @argc: Number of the arguments that passes to main
+ * @argv: Array of arguments passes to the main
  * @environment: Array of environment variables
  *
  * Return: 0 or exit status, or ?
