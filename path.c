@@ -1,9 +1,15 @@
 #include "shell.h"
 /**
+<<<<<<< HEAD
  * path_execute - Executes a command located in the system's path.
  * OWNED BY YAHYA & JAMAL
  * @command: Executes a command with the specified full path
  * @vars: pointer to struct of the variables
+=======
+ * path_execute - executes a command in the path
+ * @command: full path to the command
+ * @vars: pointer to struct of variables
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
  *
  * Return: 0 on succcess, 1 on failure
  */
@@ -41,9 +47,14 @@ int path_execute(char *command, vars_t *vars)
 	return (0);
 }
 /**
+<<<<<<< HEAD
  * find_path - notice PATH variables
  * OWNED BY YAHYA & JAMAL
  * @env: An array containing environment variables.
+=======
+ * find_path - finds the PATH variable
+ * @env: array of environment variables
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
  *
  * Return: pointer to the node that contains the PATH, or NULL on failure
  */
@@ -63,10 +74,15 @@ char *find_path(char **env)
 	return (env[i]);
 }
 /**
+<<<<<<< HEAD
  * check_for_path - examine if the command is present
  * in the system's PATH
  * OWNED BY YAHYA & JAMAL
  * @vars: The variables
+=======
+ * check_for_path - checks if the command is in the PATH
+ * @vars: variables
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
  *
  * Return: void
  */
@@ -114,9 +130,14 @@ void check_for_path(vars_t *vars)
 		new_exit(vars);
 }
 /**
+<<<<<<< HEAD
  * execute_cwd - Run the command in the current working directory
  * OWNED BY YAHYA & JAMAL
  * @vars: Pointer to a structure containing variables
+=======
+ * execute_cwd - executes the command in the current working directory
+ * @vars: pointer to struct of variables
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
  *
  * Return: 0 on success, 1 on failure
  */
@@ -161,9 +182,14 @@ int execute_cwd(vars_t *vars)
 	return (0);
 }
 /**
+<<<<<<< HEAD
  * check_for_dir - examine if the command is a part of a specified path.
  * OWNED BY YAHYA & JAMAL
  * @str: The command
+=======
+ * check_for_dir - checks if the command is a part of a path
+ * @str: command
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
  *
  * Return: 1 on success, 0 on failure
  */

@@ -1,5 +1,7 @@
 #include "shell.h"
 
+/* global variable for ^C handling */
+unsigned int sig_flag;
 
 /**
  * sig_handler - handles ^C signal interupt

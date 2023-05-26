@@ -14,7 +14,10 @@
 
 /**
  * struct variables - variables
+<<<<<<< HEAD
  * OWNED BY YAHYA & JAMAL 
+=======
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
  * @av: command line arguments
  * @buffer: buffer of command
  * @env: environment variables
@@ -35,7 +38,10 @@ typedef struct variables
 
 /**
  * struct builtins - struct for the builtin functions
+<<<<<<< HEAD
  * OWNED BY YAHYA & JAMAL
+=======
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
  * @name: name of builtin command
  * @f: function for corresponding builtin
  */

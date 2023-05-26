@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 .TH hsh 1 "May  2023" "1.0" "hsh General Commands Manual"
 SH NAME
+=======
+.TH hsh 1 "May, 2023" "1.0" "hsh General Commands Manual"
+
+.SH NAME
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
 
 .B simple_shell - hsh
 - command line interpreter or shell
@@ -123,8 +129,14 @@ Please report any issues to the authors.
 
 .SH AUTHOR
 
+<<<<<<< HEAD
 Yahya Elaouad <yahyaelaouad0@gmail.com>
 Jamal Samaa <jimano.ads@gmail.com>
+=======
+Sammie Ogoigbe <ogoigbe12@gmail.com>
+
+Yohannes Getu <nede.evoli@gmail.com>
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
 
 .SH SEE ALSO
 sh

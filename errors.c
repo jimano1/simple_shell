@@ -2,7 +2,10 @@
 
 /**
  * print_error - prints error messages to standard error
+<<<<<<< HEAD
  * OWNED BY YAHYA & JAMAL
+=======
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
  * @vars: pointer to struct of variables
  * @msg: message to print
  *
@@ -29,7 +32,10 @@ void print_error(vars_t *vars, char *msg)
 
 /**
  * _puts2 - prints a string to standard error
+<<<<<<< HEAD
  * OWNED BY YAHYA & JAMAL
+=======
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
  * @str: string to print
  *
  * Return: void
@@ -50,7 +56,10 @@ void _puts2(char *str)
 
 /**
  * _uitoa - converts an unsigned int to a string
+<<<<<<< HEAD
  * OWNED BY YAHYA & JAMAL
+=======
+>>>>>>> c8002a93e95c69b91b5df0d74ddc8cde1ad358f7
  * @count: unsigned int to convert
  *
  * Return: pointer to the converted string
