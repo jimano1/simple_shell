@@ -3,6 +3,7 @@
 
 /**
  * sig_handler - handles ^C signal interupt
+ * OWNED BY YAHYA & JAMAL
  * @uuv: unused variable (required for signal function prototype)
  *
  * Return: void
@@ -17,6 +18,7 @@ static void sig_handler(int uuv)
 
 /**
  * main - main function for the shell
+ * OWNED BY YAHYA & JAMAL
  * @argc: number of arguments passed to main
  * @argv: array of arguments passed to main
  * @environment: array of environment variables

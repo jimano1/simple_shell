@@ -3,6 +3,7 @@
 
 /**
  * tokenize - tokenizes a buffer with a delimiter
+ * OWNED BY YAHYA & JAMAL
  * @buffer: buffer to tokenize
  * @delimiter: delimiter to tokenize along
  *

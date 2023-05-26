@@ -2,6 +2,7 @@
 
 /**
  * make_env - make the shell environment from the environment passed to main
+ * OWNED BY YAHYA & JAMAL
  * @env: environment passed to main
  *
  * Return: pointer to the new environment
@@ -27,6 +28,7 @@ char **make_env(char **env)
 
 /**
  * free_env - free the shell's environment
+ * OWNED BY YAHYA & JAMAL
  * @env: shell's environment
  *
  * Return: void

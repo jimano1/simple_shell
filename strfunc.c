@@ -2,6 +2,7 @@
 
 /**
  * _puts - writes a string to standard output
+ * OWNED BY YAHYA & JAMAL
  * @str: string to write
  *
  * Return: number of chars printed or -1 on failure
@@ -22,6 +23,7 @@ ssize_t _puts(char *str)
 
 /**
  * _strdup - returns pointer to new mem alloc space which contains copy
+ * OWNED BY YAHYA & JAMAL
  * @strtodup: string to be duplicated
  * Return: a pointer to the new duplicated string
  */
@@ -46,6 +48,7 @@ char *_strdup(char *strtodup)
 
 /**
  * _strcmpr - compares two strings
+ * OWNED BY YAHYA & JAMAL
  * @strcmp1: first string, of two, to be compared in length
  * @strcmp2: second string, of two, to be compared
  * Return: 0 on success, anything else is a failure
@@ -66,6 +69,7 @@ int _strcmpr(char *strcmp1, char *strcmp2)
 
 /**
  * _strcat - concatenates two strings
+ * OWNED BY YAHYA & JAMAL
  * @strc1: first string
  * @strc2: second string
  * Return: pointer
@@ -106,6 +110,7 @@ char *_strcat(char *strc1, char *strc2)
 
 /**
  * _strlen - returns the length of a string
+ * OWNED BY YAHYA & JAMAL
  * @str: string to be measured
  * Return: length of string
  */

@@ -2,6 +2,7 @@
 
 /**
  * add_key - create a new environment variable
+ * OWNED BY YAHYA & JAMAL
  * @vars: pointer to struct of variables
  *
  * Return: void
@@ -40,6 +41,7 @@ void add_key(vars_t *vars)
 
 /**
  * find_key - finds an environment variable
+ * OWNED BY YAHYA & JAMAL
  * @env: array of environment variables
  * @key: environment variable to find
  *
@@ -63,6 +65,7 @@ char **find_key(char **env, char *key)
 
 /**
  * add_value - create a new environment variable string
+ * OWNED BY YAHYA & JAMAL
  * @key: variable name
  * @value: variable value
  *
@@ -89,6 +92,7 @@ char *add_value(char *key, char *value)
 
 /**
  * _atoi - converts a string into an integer
+ * OWNED BY YAHYA & JAMAL
  * @str: string to convert
  *
  * Return: the integer value, or -1 if an error occurs

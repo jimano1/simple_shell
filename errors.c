@@ -2,6 +2,7 @@
 
 /**
  * print_error - prints error messages to standard error
+ * OWNED BY YAHYA & JAMAL
  * @vars: pointer to struct of variables
  * @msg: message to print
  *
@@ -28,6 +29,7 @@ void print_error(vars_t *vars, char *msg)
 
 /**
  * _puts2 - prints a string to standard error
+ * OWNED BY YAHYA & JAMAL
  * @str: string to print
  *
  * Return: void
@@ -48,6 +50,7 @@ void _puts2(char *str)
 
 /**
  * _uitoa - converts an unsigned int to a string
+ * OWNED BY YAHYA & JAMAL
  * @count: unsigned int to convert
  *
  * Return: pointer to the converted string

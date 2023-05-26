@@ -14,6 +14,7 @@
 
 /**
  * struct variables - variables
+ * OWNED BY YAHYA & JAMAL 
  * @av: command line arguments
  * @buffer: buffer of command
  * @env: environment variables
@@ -34,6 +35,7 @@ typedef struct variables
 
 /**
  * struct builtins - struct for the builtin functions
+ * OWNED BY YAHYA & JAMAL
  * @name: name of builtin command
  * @f: function for corresponding builtin
  */

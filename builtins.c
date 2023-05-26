@@ -2,6 +2,7 @@
 
 /**
  * check_for_builtins - checks if the command is a builtin
+ * OWNED BY YAHYA& JAMAL
  * @vars: variables
  * Return: pointer to the function or NULL
  */
@@ -28,6 +29,7 @@ void (*check_for_builtins(vars_t *vars))(vars_t *vars)
 
 /**
  * new_exit - exit program
+ * OWNED BY YAHYA & JAMAL
  * @vars: variables
  * Return: void
  */
@@ -59,6 +61,7 @@ void new_exit(vars_t *vars)
 
 /**
  * _env - prints the current environment
+ * OWNED BY YAHYA & JAMAL
  * @vars: struct of variables
  * Return: void.
  */
@@ -76,6 +79,7 @@ void _env(vars_t *vars)
 
 /**
  * new_setenv - create a new environment variable, or edit an existing variable
+ * OWNED BY YAHYA & JAMAL
  * @vars: pointer to struct of variables
  *
  * Return: void
@@ -114,6 +118,7 @@ void new_setenv(vars_t *vars)
 
 /**
  * new_unsetenv - remove an environment variable
+ * OWNED BY YAHYA & JAMAL
  * @vars: pointer to a struct of variables
  *
  * Return: void
